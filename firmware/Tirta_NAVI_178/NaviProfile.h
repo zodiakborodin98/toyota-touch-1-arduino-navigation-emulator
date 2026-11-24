@@ -1,0 +1,8 @@
+#pragma once
+#define NAVI_BENCH_PROFILE "CY12_AUDIO_PROBE"
+#define NAVI_BENCH_ADDRESS 0x122
+#define NAVI_FUNCTION_COUNT 4
+#define NAVI_FUNCTION_BYTES 0xB2,0xD4,0x6D,0xC6
+#define NAVI_FUNCTION_HEX "B2 D4 6D C6"
+#define NAVI_HAS_LEGACY_6D 0
+extern bool navi_b2_advertised;

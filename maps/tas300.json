@@ -1,0 +1,60 @@
+{
+  "model": "Toyota Touch TAS300 (PZ473-00213-00), bench",
+  "frame": {
+    "source_hex": "120",
+    "destination_hex": "122",
+    "control_hex": "F",
+    "length_bytes": 8,
+    "prefix_hex": "00 21 24 78",
+    "tail": ["x", "y", "x_copy", "y_copy"],
+    "release_hex": "00 00 00 00",
+    "nonmatching_copies": "ignore"
+  },
+  "raw_coordinates": {"min": 0, "max": 255, "x_increases": "right", "y_increases": "up"},
+  "linux_abs": {"min": 0, "max": 65535, "x": "257*x", "y": "257*(255-y)"},
+  "pixel_view": {"width": 480, "height": 240, "x": "round(x*479/255)", "y": "round((255-y)*239/255)"},
+  "observed_taps_raw_xy": {
+    "top_left": [[16,239],[17,226],[13,233],[10,235],[15,228]],
+    "top_right": [[233,219],[237,224],[236,221],[238,221],[241,219]],
+    "bottom_left": [[19,15],[14,14],[18,28],[16,12],[13,12]],
+    "bottom_right": [[237,35],[240,33],[240,35],[237,35],[239,27]],
+    "center": [[108,126],[114,130],[115,126],[115,131],[118,123]]
+  },
+  "menu_source": {
+    "canvas_px": [480,234],
+    "raw_bounds_order": ["x_min", "x_max", "y_min", "y_max"],
+    "raw_endpoints": "inclusive",
+    "highlight_px_order": ["x_from_left", "y_from_top", "width", "height"],
+    "zones": {
+      "fm":       {"raw_bounds": [4,82,154,205],    "highlight_px": [11,48,141,42]},
+      "am":       {"raw_bounds": [87,165,154,205],  "highlight_px": [167,48,141,42]},
+      "cd":       {"raw_bounds": [170,248,154,205], "highlight_px": [323,48,141,42]},
+      "aux":      {"raw_bounds": [4,82,93,144],     "highlight_px": [11,104,141,42]},
+      "external": {"raw_bounds": [87,165,93,144],   "highlight_px": [167,104,141,42]},
+      "back":     {"raw_bounds": [186,249,214,249], "highlight_px": [353,8,114,27]}
+    },
+    "outside_action": null
+  },
+  "phone_prototype_archive": {"back_raw_bounds": [54,201,70,109], "back_canvas_px_inclusive_xyxy": [101,135,378,169], "canvas_px": [480,234], "active_in_release": false},
+  "button_frames": {
+    "B2_85": {"prefix_hex": "00 25 B2 85", "tail_size": 12, "events": [
+      {"tail_offset": 0, "mask_hex": "01", "name": "media"},
+      {"tail_offset": 0, "mask_hex": "02", "name": "map"},
+      {"tail_offset": 0, "mask_hex": "04", "name": "phone"},
+      {"tail_offset": 11, "mask_hex": "80", "name": "source_softkey"},
+      {"tail_offset": 11, "mask_hex": "10", "name": "bluetooth_softkey"}
+    ]},
+    "D4_84": {"prefix_hex": "00 25 D4 84", "tail_size": 2, "events": [
+      {"tail_offset": 0, "mask_hex": "80", "name": "next_track"},
+      {"tail_offset": 0, "mask_hex": "40", "name": "previous_track"},
+      {"tail_offset": 0, "mask_hex": "01", "name": "bench_restart_binding"}
+    ]}
+  },
+  "livi_calibration": {
+    "target_units": "screen_fraction_top_left",
+    "targets_in_order": [[0.1,0.1],[0.9,0.1],[0.9,0.9],[0.1,0.9]],
+    "matrix_order": ["xx", "xy", "x_offset", "yx", "yy", "y_offset"],
+    "default_matrix": [1,0,0,0,1,0],
+    "measured_unit_matrix": null
+  }
+}
